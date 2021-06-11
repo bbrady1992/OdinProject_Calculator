@@ -1,0 +1,10 @@
+#calculator-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+}
