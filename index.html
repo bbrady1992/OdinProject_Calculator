@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Calculator</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-        <div id="greeting">
-            <h1>Calculator</h1>
-            <p>This calculator web app was created as part of the Odin Project Foundations curriculum.</p>
-            <a href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator">Project Description</a>
-        </div>
-        <div id="calculator-container">
-            <div id="display">DISPLAY</div>
-            <button type="button" id="delete"><-</button>
-            <button type="button" id="divide">/</button>
+  <head>
+    <title>Calculator</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="greeting">
+      <h1>Calculator</h1>
+      <p>
+        This calculator web app was created as part of the Odin Project
+        Foundations curriculum.
+      </p>
+      <a
+        href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator"
+        >Project Description</a
+      >
+    </div>
+    <div id="calculator-container">
+      <div id="display">1234567890</div>
+      <button type="button" class="control" id="delete"><-</button>
+      <button type="button" class="operator" id="divide">/</button>
 
-            <button type="button" id="seven">7</button>
-            <button type="button" id="eight">8</button>
-            <button type="button" id="nine">9</button>
-            <button type="button" id="multiply">X</button>
+      <button type="button" class="numeric" id="seven">7</button>
+      <button type="button" class="numeric" id="eight">8</button>
+      <button type="button" class="numeric" id="nine">9</button>
+      <button type="button" class="operator" id="multiply">X</button>
 
-            <button type="button" id="four">4</button>
-            <button type="button" id="five">5</button>
-            <button type="button" id="six">6</button>
-            <button type="button" id="subtract">-</button>
+      <button type="button" class="numeric" id="four">4</button>
+      <button type="button" class="numeric" id="five">5</button>
+      <button type="button" class="numeric" id="six">6</button>
+      <button type="button" class="operator" id="subtract">-</button>
 
-            <button type="button" id="one">1</button>
-            <button type="button" id="two">2</button>
-            <button type="button" id="three">3</button>
-            <button type="button" id="add">+</button>
+      <button type="button" class="numeric" id="one">1</button>
+      <button type="button" class="numeric" id="two">2</button>
+      <button type="button" class="numeric" id="three">3</button>
+      <button type="button" class="operator" id="add">+</button>
 
-            <button type="button" id="decimal">.</button>
-            <button type="button" id="zero">0</button>
-            <button type="button" id="clear">C</button>
-            <button type="button" id="equals">=</button>
-        </div>
-    </body>
+      <button type="button" class="numeric" id="decimal">.</button>
+      <button type="button" class="numeric" id="zero">0</button>
+      <button type="button" class="control" id="clear">C</button>
+      <button type="button" class="operator" id="equals">=</button>
+    </div>
+  </body>
+  <script src="scripts/buttons.js"></script>
 </html>
