@@ -1,18 +1,27 @@
+html {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+#calculator-background {
+  display: flex;
+  flex-direction: column;
+  background-color: darkslategray;
+  align-items: center;
+  align-content: center;
+  border-radius: 10px;
+  padding: 15px;
+  width: 325px;
+}
+
 #calculator-container {
   display: grid;
   grid-template-columns: 80px 80px 80px 80px;
   grid-template-rows: 80px 80px 80px 80px 80px 80px;
 }
 
-h1 {
-  background-color: black;
-  color: white;
-}
-
 #calculator-container > button {
-  font-size: 24px;
+  font-size: 32px;
   border-radius: 0;
-  font-family: "IBM Plex Mono", monospace;
 }
 
 #calculator-container > button:hover {
@@ -95,7 +104,17 @@ h1 {
   grid-row-end: 3;
   background-color: #7fbf3f;
   font-size: 36px;
-  font-family: "IBM Plex Mono", monospace;
+  text-align: right;
+}
+
+#lower-display {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: #7fbf3f;
+  font-size: 20px;
+  text-align: right;
 }
 
 #divide {
@@ -105,4 +124,6 @@ h1 {
 #clear {
   grid-column: 4;
   grid-row: 1;
+  background: orangered;
+  color: white;
 }

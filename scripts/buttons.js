@@ -10,6 +10,7 @@ const multiplyButton = document.querySelector("#multiply");
 const divideButton = document.querySelector("#divide");
 
 const display = document.querySelector("#display");
+const lowerDisplay = document.querySelector("#lower-display");
 const numericButtons = document.querySelectorAll(".numeric");
 numericButtons.forEach((b) => {
   b.addEventListener("click", (e) => {
@@ -22,6 +23,9 @@ numericButtons.forEach((b) => {
 
 document.querySelector("#clear").addEventListener("click", (e) => {
   display.textContent = "";
+  operation.operand1 = null;
+  operation.operand2 = null;
+  operation.operation = null;
 });
 
 document.querySelector("#delete").addEventListener("click", (e) => {
@@ -42,6 +46,7 @@ document.querySelectorAll(".operator").forEach((b) => {
 
     if (!operation.operand1) {
       operation.operand1 = +display.textContent;
+      lowerDisplay.textContent = operation.operand1;
       console.log(`Operand 1: '${operation.operand1}'`);
     } else {
       operation.operand2 = +display.textContent;
@@ -49,23 +54,27 @@ document.querySelectorAll(".operator").forEach((b) => {
     }
     display.textContent = "";
 
-
-
     if (e.target.getAttribute("id") === "equals") {
-      if (operation.operand1 !== null 
-        && operation.operand2 !== null
-        && operation.operation !== null) {
-          let result = operate(operation, operand1, operand2);
-          operation.operand1 = result;
-          operation.operand2 = null;
-          operation.operation = null;
-          display.textContent = result;
-
-        }
+      if (
+        operation.operand1 !== null &&
+        operation.operand2 !== null &&
+        operation.operation !== null
+      ) {
+        let result = operate(
+          operation.operation,
+          operation.operand1,
+          operation.operand2
+        );
+        operation.operand1 = result;
+        operation.operand2 = null;
+        operation.operation = null;
+        display.textContent = result;
+      }
       console.log("Hit equals button");
     }
 
-        switch (e.target.textContent) {
+    lowerDisplay.textContent += ` ${e.target.textContent} `;
+    switch (e.target.textContent) {
       case addButton.textContent:
         operation.operation = add;
         break;
