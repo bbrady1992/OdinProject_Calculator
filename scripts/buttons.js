@@ -91,6 +91,19 @@ document.querySelectorAll(".operator").forEach((b) => {
   });
 });
 
+
+
+window.addEventListener('keydown', e => {
+  console.log(e.key);
+  console.log(e.keyCode);
+  const associatedButton = document.querySelector(`[data-key='${e.keyCode}']`);
+  if (associatedButton) {
+    associatedButton.click();
+  } else {
+    console.log(`No button associated with ${e.key} (${e.keyCode})`);
+  }
+})
+
 const add = function (a, b) {
   return a + b;
 };
